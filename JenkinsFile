@@ -10,7 +10,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 retry(3) {
-                    git branch: 'main', url: 'https://github.com/HGSChandeepa/test-react'
+                    git branch: 'main', url: 'https://github.com/oshan35/Nettasinghe-NAOD-4097.git'
                 }
             }
         }
