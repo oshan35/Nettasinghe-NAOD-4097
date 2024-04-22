@@ -1,29 +1,37 @@
 pipeline {
-    agent any
-    stages {
-        stage ('SCM checkout'){
-            steps{
-                retry(3){
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/oshan35/Nettasinghe-NAOD-4097.git']])
+    agent any 
+   
+    
+    stages { 
+        stage('SCM Checkout') {
+            steps {
+                retry(3) {
+                    git branch: 'main', url: 'https://github.com/oshan35/Nettasinghe-NAOD-4097.git'
                 }
             }
-      
         }
-        stage('build docker'){
-            steps {
-                sh 'docker build -t oshan190/ims-frontend-4097 .'
+        stage('Build Docker Image') {
+            steps {  
+                sh 'docker build -t oshan190/ims-app:%BUILD_NUMBER% .'
             }
-        
         }
-         stage('run'){
-            steps{
-                sh 'docker run -p 3000:3000 oshan190/ims-frontend-4097'
-         }
-         }
-         stage('show running containners'){
-      steps{
-        sh 'docker ps'
-      }
+        stage('Login to Docker Hub') {
+            steps {
+
+                withCredentials([string(credentialsId: 'dockerhub-passwd', variable: 'dockerhub')]) {
+                sh 'docker login -u oshan190 -p ${dockerhub}'
+                }
+            }
+        }
+        stage('Push Image') {
+            steps {
+                sh 'docker push oshan190/ims-app:%BUILD_NUMBER%'
+            }
+        }
     }
+    post {
+        always {
+            sh 'docker logout'
+        }
     }
 }
