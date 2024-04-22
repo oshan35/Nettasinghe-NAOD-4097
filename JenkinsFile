@@ -1,6 +1,9 @@
 pipeline {
-    agent any 
-   
+    agent any
+    
+    environment {
+        PATH = "/usr/local/bin:${env.PATH}"
+    }
     
     stages { 
         stage('SCM Checkout') {
@@ -12,20 +15,19 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {  
-                sh'docker build -t ims-app:%BUILD_NUMBER% .'
+                sh 'docker build -t oshan190/ims-app:$BUILD_NUMBER .'
             }
         }
         stage('Login to Docker Hub') {
             steps {
-
                 withCredentials([string(credentialsId: 'dockerhub-passwd', variable: 'dockerhub')]) {
-                sh'docker login -u oshan190 -p ${dockerhub}'
+                    sh 'docker login -u oshan190 -p $dockerhub'
                 }
             }
         }
         stage('Push Image') {
             steps {
-                sh'docker push oshan190/ims-app:%BUILD_NUMBER%'
+                sh 'docker push oshan190/ims-app:$BUILD_NUMBER'
             }
         }
     }
