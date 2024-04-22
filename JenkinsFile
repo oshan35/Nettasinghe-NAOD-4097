@@ -1,46 +1,29 @@
 pipeline {
     agent any
-
-    environment {
-        // Define docker image name with a dynamic build number
-        IMAGE_NAME = "adomicarts/ims-frontend-4097:${BUILD_NUMBER}"
-    }
-    
     stages {
-        stage('SCM Checkout') {
-            steps {
-                retry(3) {
-                    git branch: 'main', url: 'https://github.com/oshan35/Nettasinghe-NAOD-4097.git'
+        stage ('SCM checkout'){
+            steps{
+                retry(3){
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/oshan35/Nettasinghe-NAOD-4097.git']])
                 }
             }
+      
         }
-        stage('Build Docker Image') {
+        stage('build docker'){
             steps {
-                sh "docker build -t ${env.IMAGE_NAME} ."
+                sh 'docker build -t ims-frontend-4097 .'
             }
+        
         }
-        stage('Login to Docker Hub') {
-            steps {
-                withCredentials([string(credentialsId: 'oshan190', variable: 'OshanD991260099V')]) {
-                    sh "echo '${env.DOCKER_PASSWORD}' | docker login -u adomicarts --password-stdin"
-                }
-            }
-        }
-        stage('Push Image') {
-            steps {
-                sh "docker push ${env.IMAGE_NAME}"
-            }
-        }
+         stage('run'){
+            steps{
+                sh 'docker run -p 3000:3000 ims-frontend-4097'
+         }
+         }
+         stage('show running containners'){
+      steps{
+        sh 'docker ps'
+      }
     }
-    post {
-        always {
-            sh 'docker logout'
-        }
-        failure {
-            // Optional: Add steps to handle the failure case, such as sending notifications
-        }
-        success {
-            // Optional: Add steps to handle the success case, such as sending notifications
-        }
     }
 }
