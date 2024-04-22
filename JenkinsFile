@@ -11,13 +11,13 @@ pipeline {
         }
         stage('build docker'){
             steps {
-                sh 'docker build -t ims-frontend-4097 .'
+                sh 'docker build -t oshan190/ims-frontend-4097 .'
             }
         
         }
          stage('run'){
             steps{
-                sh 'docker run -p 3000:3000 ims-frontend-4097'
+                sh 'docker run -p 3000:3000 oshan190/ims-frontend-4097'
          }
          }
          stage('show running containners'){
