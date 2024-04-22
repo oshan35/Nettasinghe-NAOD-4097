@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_PASSWORD')]) {
+                withCredentials([string(credentialsId: 'oshan190', variable: 'OshanD991260099V')]) {
                     sh "echo '${env.DOCKER_PASSWORD}' | docker login -u adomicarts --password-stdin"
                 }
             }
