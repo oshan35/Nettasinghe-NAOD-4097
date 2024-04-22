@@ -1,0 +1,43 @@
+@import "leaflet/dist/leaflet.css";
+
+.inventory-form .ant-form-item-control-input {
+    max-width: 100%;
+}
+
+.inventory-form .leaflet-container {
+    margin-top: 10px;
+}
+
+.form-area{
+    width: 95%;
+    padding: 20px;
+}
+
+.form-map-container {
+    display: flex;
+    
+    gap: 20px; /* Adjust the gap between columns as you see fit */
+}
+
+.form-content{
+    display: flex;
+    gap: 20px
+}
+
+.left-column {
+    flex: 1; /* Adjust width ratio as per requirement */
+}
+
+.right-column {
+    flex: 1; /* Adjust width ratio as per requirement */
+}
+
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+

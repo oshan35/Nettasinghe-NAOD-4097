@@ -1,0 +1,71 @@
+.main-navbar{
+    width: 80px;
+    height: 100vh;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #264ECA;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.nav-option{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;  /* Set position relative to .nav-option */
+    transition: all 0.3s;  /* Adjust transition to apply to all properties */
+}
+
+.nav-option:hover::before {
+    content: "";  /* Empty content */
+    position: absolute;  /* Absolute position */
+    top: 0;
+    left: 0;
+    width: 5px;  /* Width of the line */
+    height: 100%;  /* Full height of the .nav-option element */
+    background-color: white;  /* Color of the line */
+}
+
+.nav-text{ 
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 5px;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* New class for active nav option */
+.active-nav-option::before {
+    background: #4068D6; 
+}
+
+.active-nav-option::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #264ECA;  /* Color of the line */
+}
+
+.active-nav-option:hover{
+    background-color: #4068D6;
+}
+

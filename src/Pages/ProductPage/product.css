@@ -1,0 +1,16 @@
+.instructions {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    box-shadow: 0 rgba(0, 0, 0, 0.2), 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+  }
+  
+  .topic{
+    color: gray;
+    font-family: 'Magra';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+}

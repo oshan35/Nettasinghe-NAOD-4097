@@ -1,0 +1,307 @@
+.LoginContainer{
+    display: flex;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.password-field{
+    height: 50px;
+}
+
+#basic_inventoryPassword{
+    height: 40px;
+}
+
+
+.LoginDetails{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    background: #264ECA;
+   
+}
+
+.Rectangle37{
+    display: flex;
+    width: 280px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 29px;
+    
+}
+
+.Rectangle38{
+    width: 32px;
+    height: 32px;
+    background: #5F6FFF;
+    
+}
+
+
+.Frame2{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+    float: right;
+}
+
+.Login{
+    color: white;
+    padding-bottom: 10px;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    
+    
+}
+
+.SeeYourGrowthAndGetSupport{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+}
+
+.InputCollection{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+
+}
+
+.Group4{
+    height: 223px;
+    width: 100%;
+    position: relative;
+
+}
+
+.rectangle34{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.Email{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rectangle35{
+    display: flex;
+    width: 80%;
+    height: 20px;
+    padding: 15px 10px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    background-color: white;
+}
+
+
+
+.EnterYouEmail {
+    color: rgba(0, 0, 0, 0.68);
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.Frame21 {
+    flex: 1 1 0;
+    align-self: stretch;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Rectangle39{
+    padding: 10px;
+    width: 80%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.Group3 {
+    width: 50%;
+    display: inline-flex;
+    position: relative;
+  
+}
+
+.check-box{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #999;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+}
+
+.checkmark {
+    color: #3fa9f5;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.check-box:hover {
+    background-color: #f5f5f5;
+}
+
+.check-box:checked {
+    background-color: #f5f5f5;
+    border-color: #3fa9f5;
+}
+
+.check-box:checked .checkmark {
+    visibility: visible;
+}
+
+.ForgotPassword {
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.RememberMe {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.login-btn{
+    display: flex;
+    width: 80%;
+    height: 50px;
+    padding: 5px 20px;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: #5F6FFF;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Rectangle40{
+    padding: 10px;
+    width: 80%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+.Background{
+
+    display: flex;
+    height: 100%;
+    width: 70%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    background-image: url('../../asserts/login-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.InputCollection .ant-input {
+    height: 50px;
+    font-size: 16px;
+}
+
+.InputCollection .ant-checkbox-wrapper {
+    color: #FFF;
+    font-size: 16px;
+}
+
+.InputCollection .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #5F6FFF;
+    border-color: #5F6FFF;
+}
+
+.login-btn {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .LoginContainer {
+        flex-direction: column;
+    }
+
+    .LoginDetails, .Background {
+        width: 100%;
+    }
+}
